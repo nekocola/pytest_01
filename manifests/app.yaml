@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: python-rds-bk
+  name: python-rds-bk
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: python-rds-bk
+  template:
+    metadata:
+      labels:
+        run: python-rds-bk
+    spec:
+      containers:
+      - image: ${IMAGE}
+        name: python-rds-bk
