@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
+from flask_cors import CORS
 from gevent import pywsgi
 app = Flask(__name__)
 
@@ -65,6 +66,6 @@ def update_user():
     cursor.close()
     conn.close()
     return ['success']
-
+CORS(app)
 server = pywsgi.WSGIServer(('0.0.0.0',80),app)
 server.serve_forever()
