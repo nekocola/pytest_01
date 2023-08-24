@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 def create_conn():
     conn = mysql.connector.connect(
-        host="rm-cn-lbj3crvpg000xg.rwlb.rds.aliyuncs.com",
+        host="192.168.142.174",
         user="dfspoc",
         password="zaq12wsx!",
         database="DFS_POC"
