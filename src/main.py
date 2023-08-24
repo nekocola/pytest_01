@@ -10,6 +10,7 @@ def create_conn():
         host="192.168.142.174",
         user="dfspoc",
         password="zaq12wsx!",
+        port=3306,
         database="DFS_POC"
     )
     return conn
