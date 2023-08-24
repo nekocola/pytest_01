@@ -68,5 +68,5 @@ def update_user():
     conn.close()
     return ['success']
 CORS(app)
-server = pywsgi.WSGIServer(('0.0.0.0',12345),app)
+server = pywsgi.WSGIServer(('0.0.0.0',80),app)
 server.serve_forever()
