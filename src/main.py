@@ -25,13 +25,13 @@ def get_users():
     conn.close()
     return users
 
-@app.route('/getuser')
+@app.route('/api/getuser')
 def index():
     users = get_users()
     return users
 
 
-@app.route('/add_user', methods=['POST'])
+@app.route('/api/add_user', methods=['POST'])
 def add_user():
     name = request.form['name']
     age = request.form['age']
@@ -44,7 +44,7 @@ def add_user():
     return ['success']
 
 
-@app.route('/delete_user/', methods=['POST'])
+@app.route('/api/delete_user/', methods=['POST'])
 def delete_user():
     id = request.form['id']
     conn = create_conn()
@@ -56,7 +56,7 @@ def delete_user():
     return ['success']
 
 
-@app.route('/update_user/', methods=['POST'])
+@app.route('/api/update_user/', methods=['POST'])
 def update_user():
     name = request.form['name']
     age = request.form['age']
